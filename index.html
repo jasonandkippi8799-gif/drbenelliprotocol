@@ -39,7 +39,10 @@ a { color: var(--green-mid); text-decoration: none; }
 .section-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block; }
 
 /* TOPBAR */
-.topbar { position: sticky; top: 0; z-index: 999; background: var(--green-darkest); color: var(--gold-pale); text-align: center; padding: 10px 20px; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; border-bottom: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.topbar { position: sticky; top: 0; z-index: 999; background: var(--green-darkest); color: var(--gold-pale); padding: 10px 20px; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; border-bottom: 2px solid var(--gold); display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.topbar-center { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; flex: 1; }
+.topbar-buy-btn { background: var(--gold); color: var(--green-darkest); font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 0.02em; padding: 7px 16px; border-radius: var(--radius-sm); white-space: nowrap; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.25); flex-shrink: 0; }
+.topbar-buy-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
 .countdown { display: inline-flex; gap: 4px; align-items: center; font-family: var(--font-display); font-size: 15px; color: var(--gold); }
 .countdown .unit { background: rgba(200,168,75,0.15); border: 1px solid rgba(200,168,75,0.4); border-radius: var(--radius-sm); padding: 1px 6px; min-width: 28px; text-align: center; }
 .countdown .sep { opacity: 0.5; }
@@ -215,7 +218,9 @@ footer a { color: rgba(255,255,255,0.45); text-decoration: underline; }
   .doctor-stats { justify-content: center; }
   .price-box { padding: 28px 20px; }
   .trust-bar-inner { gap: 18px; }
-  .topbar { font-size: 11px; gap: 8px; }
+  .topbar { font-size: 11px; gap: 8px; justify-content: center; }
+  .topbar-center { justify-content: center; }
+  .topbar-buy-btn { font-size: 11px; padding: 6px 12px; }
   .hero-book { width: 220px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
@@ -225,13 +230,16 @@ footer a { color: rgba(255,255,255,0.45); text-decoration: underline; }
 
 <!-- TOPBAR -->
 <div class="topbar">
-  <span>⏳ Launch Pricing Ends In:</span>
-  <div class="countdown">
-    <span class="unit" id="cd-h">00</span><span class="sep">:</span>
-    <span class="unit" id="cd-m">00</span><span class="sep">:</span>
-    <span class="unit" id="cd-s">00</span>
+  <div class="topbar-center">
+    <span>⏳ Launch Pricing Ends In:</span>
+    <div class="countdown">
+      <span class="unit" id="cd-h">00</span><span class="sep">:</span>
+      <span class="unit" id="cd-m">00</span><span class="sep">:</span>
+      <span class="unit" id="cd-s">00</span>
+    </div>
+    <span>— Only $29 While This Offer Lasts</span>
   </div>
-  <span>— Only $29 While This Offer Lasts</span>
+  <a href="https://benelli1.gumroad.com/l/wzugbb?wanted=true" class="topbar-buy-btn">Buy The Protocol Here →</a>
 </div>
 
 <!-- HERO -->
